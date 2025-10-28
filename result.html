@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Your Heart Risk Result</h1>
+        </header>
+
+        <section class="card result">
+            <div class="pill {{ 'danger' if label == 'High Risk' else 'success' }}">{{ label }}</div>
+            <p class="prob">Estimated probability: <strong>{{ probability }}%</strong></p>
+        </section>
+
+        <section class="card">
+            <h2>Personalized Recommendations</h2>
+            <ul class="recs">
+                {% for r in recommendations %}
+                <li>{{ r }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <div class="actions">
+            <a class="btn" href="/">Go Back</a>
+        </div>
+
+        <footer>
+            <p class="disclaimer">This tool is for educational purposes only and does not provide medical advice.</p>
+        </footer>
+    </div>
+</body>
+</html>
+
+

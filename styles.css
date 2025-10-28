@@ -1,0 +1,80 @@
+:root {
+  --bg: #0b1020;
+  --card: #121933;
+  --muted: #96a0c0;
+  --text: #e7ecff;
+  --accent: #6aa5ff;
+  --danger: #ff6b6b;
+  --success: #2ecc71;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 800px at 70% -20%, #203080 0%, #0b1020 60%);
+  color: var(--text);
+}
+
+.container { max-width: 980px; margin: 0 auto; padding: 32px 16px 64px; }
+header { margin-bottom: 16px; }
+h1 { font-size: 28px; margin: 0 0 6px; }
+.subtitle { color: var(--muted); margin: 0; }
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  margin: 16px 0;
+}
+
+.form-grid h2 { margin: 8px 0 12px; font-size: 18px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: var(--muted); }
+input, select {
+  background: #0f1733;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.actions { display: flex; justify-content: center; margin-top: 12px; }
+.btn {
+  background: linear-gradient(90deg, #568cff, #7aa9ff);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(104,140,255,0.35);
+}
+.btn:hover { filter: brightness(1.05); }
+
+.result { display: flex; align-items: center; gap: 16px; }
+.pill { padding: 6px 10px; border-radius: 999px; font-weight: 700; font-size: 13px; }
+.pill.success { background: rgba(46, 204, 113, 0.15); color: var(--success); border: 1px solid rgba(46, 204, 113, 0.4); }
+.pill.danger { background: rgba(255, 107, 107, 0.15); color: var(--danger); border: 1px solid rgba(255, 107, 107, 0.4); }
+.prob { margin: 0; }
+
+.recs { margin: 0; padding-left: 20px; }
+.recs li { margin: 6px 0; }
+
+.disclaimer { color: var(--muted); font-size: 12px; text-align: center; margin-top: 16px; }
+
+@media (max-width: 720px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+
